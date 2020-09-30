@@ -77,6 +77,20 @@ public class UserRegisteration {
         else {
         	System.out.println("password does not follows the pattern");	
         }
+        
+        //Checking sample emails
+        System.out.println("Enter The Email Id");
+        String email_id_sample=sc.next();
+        String pattern6 ="^[abc]+((\\.[0-9]+)|(\\+[0-9]+)|(\\-[0-9]+)|([0-9]))*@*+[a-zA-Z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        Pattern email_sample = Pattern.compile(pattern6);
+        Matcher m6 = email_sample.matcher(email_id_sample);	
+        if(m6.matches()) {
+        	System.out.println("Email follows pattern: "+email_id_sample);
+        }
+        else {
+        	System.out.println("Email does not follows the pattern");	
+        }
+
       	sc.close();
 }
 }
