@@ -65,10 +65,10 @@ public class UserRegisteration {
       		System.out.println("Mobile Number does not follows the pattern");
       	}
       	
-      	//Valid password of minimum 8 characters
+      	//Valid password of minimum 8 characters and at least one Upper Case Character
       	System.out.println("Enter your password");
         String password=sc.nextLine();
-        String pattern5="[a-z]{8,}$";
+        String pattern5="(?=.*[A-Z])(?=.*[a-z])[^\\s][^0-9]{8,}$";
         Pattern password_pattern = Pattern.compile(pattern5);
         Matcher m5 = password_pattern.matcher(password);
         if(m5.matches()) {
