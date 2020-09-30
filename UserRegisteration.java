@@ -53,6 +53,7 @@ public class UserRegisteration {
     
       	//Valid phone number
       	System.out.println("Enter The Mobile Number");
+      	sc.next();
       	String mobile_number=sc.nextLine();
       	String pattern4 ="^[1-9]{2}\\s[1-9]{1}[0-9]{9}$";
       	Pattern mobile_pattern = Pattern.compile(pattern4);
@@ -63,6 +64,19 @@ public class UserRegisteration {
       	else {
       		System.out.println("Mobile Number does not follows the pattern");
       	}
+      	
+      	//Valid password of minimum 8 characters
+      	System.out.println("Enter your password");
+        String password=sc.nextLine();
+        String pattern5="[a-z]{8,}$";
+        Pattern password_pattern = Pattern.compile(pattern5);
+        Matcher m5 = password_pattern.matcher(password);
+        if(m5.matches()) {
+        	System.out.println("password follows pattern: "+password);
+        }
+        else {
+        	System.out.println("password does not follows the pattern");	
+        }
       	sc.close();
 }
 }
