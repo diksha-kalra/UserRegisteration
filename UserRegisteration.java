@@ -50,8 +50,19 @@ public class UserRegisteration {
     	else {
     		System.out.println("Email does not follows the pattern");
     	}
-
-
-    	sc.close();
+    
+      	//Valid phone number
+      	System.out.println("Enter The Mobile Number");
+      	String mobile_number=sc.nextLine();
+      	String pattern4 ="^[1-9]{2}\\s[1-9]{1}[0-9]{9}$";
+      	Pattern mobile_pattern = Pattern.compile(pattern4);
+      	Matcher m4 = mobile_pattern.matcher(mobile_number);
+      	if(m4.matches()) {
+      		System.out.println("Mobile Number follows pattern: "+mobile_number);
+      	}
+      	else {
+      		System.out.println("Mobile Number does not follows the pattern");
+      	}
+      	sc.close();
 }
 }
