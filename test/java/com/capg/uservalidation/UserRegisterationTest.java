@@ -1,13 +1,6 @@
 package com.capg.uservalidation;
-	
-
-	import org.junit.Test;
-	
-
-	import org.junit.Assert;
-	
-
-	
+import org.junit.Test;
+import org.junit.Assert;
 
 	public class UserRegisterationTest {
 	    
@@ -73,4 +66,4 @@ package com.capg.uservalidation;
 			boolean result= validator.validatePassword("Diksha123");
 			Assert.assertEquals(false,result);	
 	    }
-	}
+}
