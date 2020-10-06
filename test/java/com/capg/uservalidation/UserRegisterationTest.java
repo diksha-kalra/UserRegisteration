@@ -13,10 +13,19 @@ public class UserRegisterationTest {
 	}
 
 	@Test
-	public void givenFirstName_WhenShort_ShouldReturnFalse() {
+	public void givenFirstName_WhenImproper_ShouldThrowException() throws UserRegisterationException {
 		UserRegisteration validator = new UserRegisteration();
 		boolean result = validator.validateFirstName("Di ");
-		Assert.assertEquals(false, result);
+		try {
+			if (result == true) {
+				System.out.println("Matches pattern");
+			} else {
+				throw new UserRegisterationException(UserRegisterationException.ExceptionType.INVALID_FIRST_NAME,
+						"invalid first name");
+			}
+		} catch (UserRegisterationException e) {
+			System.out.println("e-" + e);
+		}
 	}
 
 	@Test
@@ -27,10 +36,19 @@ public class UserRegisterationTest {
 	}
 
 	@Test
-	public void givenLastName_WhenShort_ShouldReturnFalse() {
+	public void givenLastName_WhenImproper_ShouldThrowException() throws UserRegisterationException {
 		UserRegisteration validator = new UserRegisteration();
 		boolean result = validator.validateLasttName("ka ");
-		Assert.assertEquals(false, result);
+		try {
+			if (result == true) {
+				System.out.println("Matches pattern");
+			} else {
+				throw new UserRegisterationException(UserRegisterationException.ExceptionType.INVALID_LAST_NAME,
+						"invalid last name");
+			}
+		} catch (UserRegisterationException e) {
+			System.out.println("e-" + e);
+		}
 	}
 
 	@Test
@@ -41,10 +59,19 @@ public class UserRegisterationTest {
 	}
 
 	@Test
-	public void givenEmail_WhenImproper_ShouldReturnFalse() {
+	public void givenEmail_WhenImproper_ShouldThrowException() throws UserRegisterationException {
 		UserRegisteration validator = new UserRegisteration();
 		boolean result = validator.validateEmail("diksha@.com");
-		Assert.assertEquals(false, result);
+		try {
+			if (result == true) {
+				System.out.println("Matches pattern");
+			} else {
+				throw new UserRegisterationException(UserRegisterationException.ExceptionType.INVALID_EMAIL,
+						"invalid email");
+			}
+		} catch (UserRegisterationException e) {
+			System.out.println("e-" + e);
+		}
 	}
 
 	@Test
@@ -55,10 +82,19 @@ public class UserRegisterationTest {
 	}
 
 	@Test
-	public void givenPhoneNumber_WhenImproper_ShouldReturnFalse() {
+	public void givenPhoneNumber_WhenImproper_ShouldThrowException() throws UserRegisterationException {
 		UserRegisteration validator = new UserRegisteration();
 		boolean result = validator.validatePhoneNumber("9899151937");
-		Assert.assertEquals(false, result);
+		try {
+			if (result == true) {
+				System.out.println("Matches pattern");
+			} else {
+				throw new UserRegisterationException(UserRegisterationException.ExceptionType.INVALID_NUMBER,
+						"invalid phone number");
+			}
+		} catch (UserRegisterationException e) {
+			System.out.println("e-" + e);
+		}
 	}
 
 	@Test
@@ -69,9 +105,18 @@ public class UserRegisterationTest {
 	}
 
 	@Test
-	public void givenPassword_WhenImproper_ShouldReturnFalse() {
+	public void givenPassword_WhenImproper_ShouldThrowException() throws UserRegisterationException {
 		UserRegisteration validator = new UserRegisteration();
 		boolean result = validator.validatePassword("Diksha123");
-		Assert.assertEquals(false, result);
+		try {
+			if (result == true) {
+				System.out.println("Matches pattern");
+			} else {
+				throw new UserRegisterationException(UserRegisterationException.ExceptionType.INVALID_PASSWORD,
+						"invalid password");
+			}
+		} catch (UserRegisterationException e) {
+			System.out.println("e-" + e);
+		}
 	}
 }
